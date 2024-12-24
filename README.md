@@ -23,7 +23,7 @@ Music is a powerful tool for evoking emotions, capable of influencing mood, phys
 ### Datasets ###
 - [![CoCoPops Corpus](https://img.shields.io/badge/CoCoPops-Corpus-blue)](https://github.com/Computational-Cognitive-Musicology-Lab/CoCoPops/tree/main/Billboard/Data)
 
-- Filter ```*.varms.hum```: [![CoCoPops Dataset](https://img.shields.io/badge/CoCoPops-*.varms.hum-blue)](https://github.com/Exploring-the-Influence-of-Syncopation-and-Loudness-on-Listener-Arousal-in-Music/Datasets/CoCopops%20we%20will%20use/)
+- Filter ```*.varms.hum```: [![CoCoPops Dataset](https://img.shields.io/badge/CoCoPops-*.varms.hum-blue)](Datasets/CoCopops%20we%20will%20use/)
 
 ### Installation ###
 - **Prerequsites**
