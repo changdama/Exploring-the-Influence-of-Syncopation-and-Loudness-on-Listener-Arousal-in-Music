@@ -21,16 +21,82 @@ Music is a powerful tool for evoking emotions, capable of influencing mood, phys
 
 ## Method ##
 ### Datasets ###
-[![CoCoPops Corpus](https://img.shields.io/badge/CoCoPops-Corpus-blue)](https://github.com/Computational-Cognitive-Musicology-Lab/CoCoPops/tree/main/Billboard/Data)
+- [![CoCoPops Corpus](https://img.shields.io/badge/CoCoPops-Corpus-blue)](https://github.com/Computational-Cognitive-Musicology-Lab/CoCoPops/tree/main/Billboard/Data)
 
-Filter ```*.varms.hum```: [![CoCoPops Dataset](https://img.shields.io/badge/CoCoPops-*.varms.hum-blue)](https://github.com/Exploring-the-Influence-of-Syncopation-and-Loudness-on-Listener-Arousal-in-Music/Datasets/CoCopops%20we%20will%20use/)
+- Filter ```*.varms.hum```: [![CoCoPops Dataset](https://img.shields.io/badge/CoCoPops-*.varms.hum-blue)](https://github.com/Exploring-the-Influence-of-Syncopation-and-Loudness-on-Listener-Arousal-in-Music/Datasets/CoCopops%20we%20will%20use/)
 
 ### Installation ###
-**prerequsites**
+- **Prerequsites**
 
-[![R](https://img.shields.io/static/v1?label=Language&message=R&color=blue&logo=R)](https://www.r-project.org/)
+  [![R](https://img.shields.io/static/v1?label=Language&message=R&color=blue&logo=R)](https://www.r-project.org/)
+  [![RStudio](https://img.shields.io/static/v1?label=IDE&message=RStudio&color=blue&logo=RStudio)](https://posit.co/)
 
-[![RStudio](https://img.shields.io/static/v1?label=IDE&message=RStudio&color=blue&logo=RStudio)](https://posit.co/)
+- **HumdrumR Installation**
+```
+install.packages('devtools')
+devtools::install_github("Computational-Cognitive-Musicology-Lab/humdrumR")
+git clone https://github.com/Computational-Cognitive-Musicology-Lab/humdrumR
+devtools::install()
+library(humdrumR)
+```
+### Key Features ###
+
+🎶 **Syncopation Score** 
+ - A measure of rhythmic complexity
+ - Calculated as the normalized count of syncopations within vocal parts for each piece
+
+🔊 **RMS Score**
+ - Represents loudness
+ - Computed as the average RMS value extracted from the ```**rms``` spine of each piece.
+
+😊⚡ **Arousal Score** 
+ - An overall mean value of each piece derived from listener-reported arousal levels in the ```**arousal``` spine.
+
+🎶🔊**Combined RMS and Syncopation Score**
+ - A composite score that integrates both RMS and syncopation metrics.
+
+ ### Procedure ###
+
+- **Load library**
+  ```
+   library(humdrumR)
+   library(ggplot2)
+   library(dplyr)
+   library(tidyr)
+  ```
+- **Load Files**
+  ```
+  readHumdrum('./.*hum')->Cocopops
+  ```
+- **Calculating Syncopation Scores**
+  - Analyze the syncopation of each piece. First, obtain the duration of each piece and convert them into numerical values. Group the data according to the 
+    "Piece".
+  ```
+   dur_values <- Cocopops|>
+       group_by(Piece) |>
+       mutate(Duration = as.numeric(as.character(duration(Token)))) |>
+   ungroup()
+  ```
+  
+  - Using “syncopation(dur, meter = duple(5), levels = “all”, groupby = list())” in HumdrumR  to access songs in 4/4 time and obtain syncopations. The result is 
+    true and flase. True represents syncopations, and flase does not.
+    ```
+    Synco <- dur_values |>
+      group_by(Piece) |>
+      summarise(Syncopation = list(syncopation(Duration, meter = duple(5), levels = "all", groupby = list())))
+    ```
+
+  - Calculate the number of “true” in each piece, that is, the number of syncopations, and use “geom_col” in “ggplot” to plot a bar chart about piece and 
+    Syncopation_Count.
+    ```
+    results <- Synco |> 
+               mutate(Syncopation_Count = sapply(Syncopation, function(x) sum(x)))
+    ggplot(results, aes(x = as.factor(Piece), y = Syncopation_Count)) +
+               geom_col() +
+               labs(title = "Syncopation Count per Piece", x = "Piece", y = "Syncopation Count") + theme_minimal()
+    ggsave("plot.jpg", width = 8, height = 6, dpi = 800)
+    ```
+    
 
 
 
