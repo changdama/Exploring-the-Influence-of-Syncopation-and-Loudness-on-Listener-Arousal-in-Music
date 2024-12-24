@@ -21,6 +21,7 @@ Music is a powerful tool for evoking emotions, capable of influencing mood, phys
 
 ## Method ##
 ### Datasets ###
-[![CoCoPops Corpus](https://img.shields.io/badge/CoCoPops-Corpus-blue)](https://github.com/Computational-Cognitive-Musicology-Lab/CoCoPops/Billboard/Data/)
+[![CoCoPops Corpus](https://img.shields.io/badge/CoCoPops-Corpus-blue)](https://github.com/Computational-Cognitive-Musicology-Lab/CoCoPops/tree/main/Billboard/Data)
+
 
 
