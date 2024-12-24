@@ -178,7 +178,7 @@ library(humdrumR)
          theme_minimal()
      ggsave("RMS Score.png", width = 8, height = 6, dpi = 800)
      ```
-     ![Plot](Fig/pic/pieces/RMS%20Score.jpg)
+     <img src="Fig/pic/pieces/RMS%20Score.jpg" alt="Plot" style="background-color: white; padding: 10px;">
 
 
 
