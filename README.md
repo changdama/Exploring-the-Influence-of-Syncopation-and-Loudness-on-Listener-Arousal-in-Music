@@ -96,7 +96,28 @@ library(humdrumR)
                labs(title = "Syncopation Count per Piece", x = "Piece", y = "Syncopation Count") + theme_minimal()
     ggsave("plot.jpg", width = 8, height = 6, dpi = 800)
     ```
+    ![Plot](Fig/pic/pieces/plot.jpg)
     
+  - Syncopation score for each piece is calculated by taking the Syncopation_Count statistics for all 100 pieces, arranging all the data from smallest to largest, and normalizing to [0,100] to obtain the 
+    corresponding score, and make all Syncopation_Score as scatter plots.
+    
+    ```
+    min_valueS <- min(results$Syncopation_Count)
+    max_valueS <- max(results$Syncopation_Count)
+    S_Score_list <- results |> 
+    mutate(Syncopation_Score = (results$Syncopation_Count - min_valueS) / (max_valueS - min_valueS) * 100)
+
+    print(S_Score_list$Syncopation_Score)
+    ggplot(S_Score_list, aes(x = Piece, y = Syncopation_Score)) +
+        geom_point(color = "black", size = 3) +
+        labs(
+          x = "Piece", 
+          y = "Syncopation Score", 
+          title = "Syncopation Score by Piece"
+        )
+    ggsave("Syncopation Score.png", width = 8, height = 6, dpi = 800)
+    ```
+    ![Plot](Fig/pic/pieces/Syncopation%20Score.png)
 
 
 
