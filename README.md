@@ -119,6 +119,69 @@ library(humdrumR)
     ```
     ![Plot](Fig/pic/pieces/Syncopation%20Score.png)
 
+ - **Calculating RMS Scores**
+   - Design a function (RMS)that calculates the average of the total rms value of all rows in each song.First, the data in the **rms spine of the corpus is filtered, and the remaining spine is removed, grouping 
+     each piece. Second,Convert humdrum format to data.frame. Load all rms values into col1 and ensure that all data is numeric. Calculate the average of all values in col1, which is the average rms value of the 
+     piece.
+     ```
+     RMS<- function(data) {
+           data |>
+           filter(Exclusive == "rms") |>
+           group_by(Piece, Bar) |>
+           removeEmptySpines() |>
+           as.data.frame() |>
+           separate(V1, into = "Col1", sep = " ") |>
+           mutate(Col1 = as.numeric(Col1)) |>
+           summarise(mean_col1 = mean(Col1, na.rm = TRUE)) |>
+           ungroup()
+     }
+     ```
+   - Iterate 100 pieces and calculate the rms mean value of all the songs.(Because using “as.data.frame” to calculate the mean causes the “group_by(Piece,Bar)” function in HumdrumR to be broken, if the input is 
+     the entire Cocopops corpus, the result is the unique mean of all pieces and all phrases.) Extract the rms average of all pieces and write them to a list, convert to a data frame, and finally visualize them.
+     ```
+     RMS_list<- list()
+     for (i in 1:100) {
+        RMS_result <- RMS(Cocopops[i])
+        RMS_list[[i]] <- RMS_result$mean_col1
+      }
+      mean_col1_list <- lapply(RMS_list, function(x) as.numeric(x))
+
+      # Convert to data frame
+      mean_col1_df <- data.frame(mean_col1 = unlist(mean_col1_list))
+
+      # View results and visualization
+      print(mean_col1_df )
+
+      ggplot(mean_col1_df, aes(x = seq_along(mean_col1), y = mean_col1)) +
+      geom_point(size = 2, color = "black") 
+     labs(
+        x = "Piece", 
+        y = "RMSValue", 
+        title = "RMSValue by Piece"
+       ) +
+       theme_minimal()
+     ggsave("RMSValue.png", width = 8, height = 6, dpi = 800)
+     ```
+   - For subsequent correlation analysis, we also normalized the average rms value of all pieces from small to large to 0-100 as the rms score of each song and visualize them.
+     ```
+     min_value_means_col1 <- min(mean_col1_df$mean_col1)
+     max_value_means_col1 <- max(mean_col1_df$mean_col1)
+     Rms_Score = (mean_col1_df$mean_col1- min_value_means_col1) / (max_value_means_col1 - min_value_means_col1) * 100
+     Rms_Score_df <- data.frame(Piece = seq_along(Rms_Score), Rms_Score = Rms_Score)
+     ggplot(Rms_Score_df, aes(x = Piece, y = Rms_Score)) +
+         geom_point(size = 3, color = "black") +  
+         labs(
+           x = "Piece", 
+           y = "RMS Score", 
+           title = "RMS Score Plot"
+         ) +
+         theme_minimal()
+     ggsave("RMS Score.png", width = 8, height = 6, dpi = 800)
+     ```
+     ![Plot](Fig/pic/pieces/RMS%20Score.png)
+
+
+
 
 
 
