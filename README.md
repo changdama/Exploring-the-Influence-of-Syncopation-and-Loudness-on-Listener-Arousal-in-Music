@@ -253,6 +253,13 @@ library(humdrumR)
   to decrease, contrary to hypothesis.
 
 - The correlation between RMS score and arousal score（[Code: Line 250-288](/code.Rmd#L250))
+   ![Plot](Fig/pic/pieces/linear_regression_RMS_Score_and_Arousal_Score_.jpg)
+   RMS scores positively correlated with arousal (coefficient = 0.7341, p = 0.000719). The positive slope in the multiple linear regression model (Fig. 6) indicates that as RMS score increases, arousal score also increases, supporting our hypothesis. Although the 
+   coefficient between RMS Score and arousal score is greater than 0, the R² value is only 0.1107, which means that the relationship between the two is not convincing.
+
+- Combined Analysis([Code: Line 289-328](/code.Rmd#L289))
+  ![Plot](Fig/pic/pieces/linear_regression_RMS_Score_and_Arousal_Score_.jpg)
+  
 
   
 
