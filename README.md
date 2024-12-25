@@ -258,7 +258,7 @@ library(humdrumR)
    coefficient between RMS Score and arousal score is greater than 0, the R² value is only 0.1107, which means that the relationship between the two is not convincing.
 
 - Combined Analysis([Code: Line 289-328](/code.Rmd#L289))
-  ![Plot](Fig/pic/pieces/linear_regression_RMS_Score_and_Arousal_Score_.jpg)
+  ![Plot](Fig/pic/pieces/linear_regression_RMS_Score_Scycopation_Score_and_Arousal_Score_.jpg)
   
 
   
