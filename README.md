@@ -246,7 +246,8 @@ library(humdrumR)
 
 ### Results ###
 - The correlation between syncopation score and arousal score（[Code: Line 205-248](/code.Rmd#L205)
-  ![Plot](Fig/pic/pieces/Arousal%20Score.jpg)
+
+  ![Plot](Fig/pic/pieces/linear_regression_Syncopation_Score_and20%_Arousal_Score.jpg)
 
 
 
