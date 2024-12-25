@@ -242,7 +242,11 @@ library(humdrumR)
                 theme_minimal()
       ggsave("Arousal Score.png", width = 8, height = 6, dpi = 800)
       ```
-   ![Plot](Fig/pic/pieces/Syncopation%20Score.png)
+   ![Plot](Fig/pic/pieces/Arousal%20Score.jpg)
+
+### Results ###
+- The correlation between syncopation score and arousal score()
+
 
 
 
