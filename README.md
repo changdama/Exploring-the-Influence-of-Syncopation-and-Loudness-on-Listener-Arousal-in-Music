@@ -245,9 +245,18 @@ library(humdrumR)
    ![Plot](Fig/pic/pieces/Arousal%20Score.jpg)
 
 ### Results ###
-- The correlation between syncopation score and arousal score（[Code: Line 205-248](/code.Rmd#L205)
+- The correlation between syncopation score and arousal score（[Code: Line 205-248](/code.Rmd#L205))
 
-  ![Plot](Fig/pic/pieces/linear_regression_Syncopation_Score_and20%_Arousal_Score.jpg)
+  ![Plot](Fig/pic/pieces/linear_regression_Syncopation_Score_and_Arousal_Score.jpg)
+  We employed a multiple linear regression model to examine the relationship between the Syncopation score and the Arousal score. The analysis revealed a  negative 
+  relationship (coefficient = -0.1626, p = 0.1711), with minimal variance explained (R² = 0.01903), which suggests that as the syncopation score increases, the arousal score tends 
+  to decrease, contrary to hypothesis.
+
+- The correlation between RMS score and arousal score（[Code: Line 250-288](/code.Rmd#L250))
+
+  
+
+  
 
 
 
