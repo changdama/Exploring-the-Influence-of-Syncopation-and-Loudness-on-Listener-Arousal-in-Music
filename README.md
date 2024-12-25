@@ -245,7 +245,8 @@ library(humdrumR)
    ![Plot](Fig/pic/pieces/Arousal%20Score.jpg)
 
 ### Results ###
-- The correlation between syncopation score and arousal score([Code](code.Rmd#c-linear-regression-among-syncopation-score-arousal-score-and-rms-score)
+- The correlation between syncopation score and arousal score([Code: Line 205](https://github.com/changdama/Exploring-Syncopation/blob/main/code.Rmd#L205)
+)
 )
 )
 
