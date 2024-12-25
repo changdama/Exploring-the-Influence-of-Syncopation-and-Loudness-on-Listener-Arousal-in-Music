@@ -248,18 +248,25 @@ library(humdrumR)
 - The correlation between syncopation score and arousal score（[Code: Line 205-248](/code.Rmd#L205))
 
   ![Plot](Fig/pic/pieces/linear_regression_Syncopation_Score_and_Arousal_Score.jpg)
+  
   We employed a multiple linear regression model to examine the relationship between the Syncopation score and the Arousal score. The analysis revealed a  negative 
   relationship (coefficient = -0.1626, p = 0.1711), with minimal variance explained (R² = 0.01903), which suggests that as the syncopation score increases, the arousal score tends 
   to decrease, contrary to hypothesis.
 
 - The correlation between RMS score and arousal score（[Code: Line 250-288](/code.Rmd#L250))
    ![Plot](Fig/pic/pieces/linear_regression_RMS_Score_and_Arousal_Score_.jpg)
-   RMS scores positively correlated with arousal (coefficient = 0.7341, p = 0.000719). The positive slope in the multiple linear regression model (Fig. 6) indicates that as RMS score increases, arousal score also increases, supporting our hypothesis. Although the 
-   coefficient between RMS Score and arousal score is greater than 0, the R² value is only 0.1107, which means that the relationship between the two is not convincing.
+  
+   RMS scores positively correlated with arousal (coefficient = 0.7341, p = 0.000719). The positive slope in the multiple linear regression model (Fig. 6) indicates that as RMS score 
+   increases, arousal score also increases, supporting our hypothesis. Although the coefficient between RMS Score and arousal score is greater than 0, the R² value is only 0.1107, which 
+   means that the relationship between the two is not convincing.
 
 - Combined Analysis([Code: Line 289-328](/code.Rmd#L289))
-  ![Plot](Fig/pic/pieces/linear_regression_RMS_Score_Scycopation_Score_and_Arousal_Score_.jpg)
+  ![Plot](Fig/pic/pieces/linear_regression_RMS_Score_Scycopation_Score_and_Arousal_Score.jpg)
   
+  While examining the relationships between our variables, we created a new com-bined variable integrating the Syncopation and RMS scores to assess its correlation with the Arousal Score. 
+  Based on the syncopation coefficient of -0.1487 and the RMS coefficient of -0.7242, the overall coefficient is still greater than 0, and the relationship between the independent variable 
+  and the dependent variable is still positively corre-lated. Compared to the effect of the RMS score on the arousal score alone, the R-squared increases to 0.1266, which means that after 
+  combining the syncopation score,the variable factors that affect the arousal score are more convincing
 
   
 
