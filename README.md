@@ -178,7 +178,72 @@ library(humdrumR)
          theme_minimal()
      ggsave("RMS Score.png", width = 8, height = 6, dpi = 800)
      ```
-     <img src="Fig/pic/pieces/RMS%20Score.jpg" alt="Plot" style="background-color: white; padding: 10px;">
+     ![Plot2](Fig/pic/pieces/RMS_Score.jpg)
+     
+- **Calculating Arousal Score of each piece**
+  - Design a function (AROUSAL)that calculates the average of the total arousal value of each piece.Since the arousal values come from four people, but in the corpus the four values are in one column, the average score for each phrase cannot be calculated. Therefore, 
+    the **.hum file must first be converted into a data frame, and then the data of one column  from four people into four columns of data from one person, so that the average of the four columns of data can be calculated as the arousal value of each musical phrase 
+    of a piece. Admittedly, participants did not give scores to some musical phrases, so all “None” were changed to 0.Finally, the arousal value of each musical phrase was summed and then averaged to be used as the arousal value of the entire piece.
+    ```
+    AROUSAL <- function(data) {
+      average_result <- data |>
+      filter(Exclusive == "arousal") |>
+      group_by(Piece, Bar) |>
+      removeEmptySpines() |>
+      as.data.frame() |>
+      separate(V1, into = c("Col1", "Col2", "Col3", "Col4"), sep = " ") |>
+      mutate(across(starts_with("Col"), ~ replace_na(as.numeric(.), 0))) |>  # Replace NA with 0
+      rowwise() |>
+      mutate(row_mean = mean(c_across(starts_with("Col")), na.rm = TRUE)) |> # Calculate the average of the rows
+      ungroup()
+  
+    overall_mean <- average_result |>
+      summarise(overall_row_mean = mean(row_mean, na.rm = TRUE))  # Calculate the overall average
+  
+    return(list(average_result = average_result, overall_mean = overall_mean))
+    }
+    ```
+  - Iterate 100 pieces and calculate the arousal mean value of all the pieces.(Because using “as.data.frame” to calculate the mean causes the “group_by(Piece,Bar)” function in HumdrumR to be broken, if the input is the entire Cocopops corpus, the result is the unique 
+    mean of all pieces and all phrases.)
+    ```
+    AROUSAL_list <- list()
+    for (i in 1:100) {
+      AROUSAL_result <- AROUSAL(Cocopops[i])
+      AROUSAL_list[[i]] <- AROUSAL_result$overall_mean
+    }
+    ```
+  - Extract the average arousal value(overall_row_mean) of all pieces and write them to a list, convert to a data frame, and finally visualize them.
+    ```
+    overall_mean_list <- lapply(AROUSAL_list, function(x) as.numeric(x$overall_row_mean))
+    overall_mean_df <- data.frame(overall_mean = unlist(overall_mean_list))
+
+    print(overall_mean_df)
+    ggplot(overall_mean_df, aes(x = seq_along(overall_mean), y = overall_mean)) +
+      geom_point(color = "blue", size = 3) +
+      labs(x = "Index", y = "Overall Mean", title = "Scatter Plot of Arousal Value") +
+      theme_minimal()
+    ```
+  - For subsequent correlation analysis, we also normalized the average arousal value(overall mean) of all pieces from small to large to 0-100 as the arousal score of each song and visualize them.
+      ```
+      min_valueA <- min(overall_mean_df$overall_mean)
+      max_valueA <- max(overall_mean_df$overall_mean)
+      A_Score_list <- overall_mean_df |> 
+         mutate(Arousal_Score = (overall_mean_df$overall_mean - min_valueA) / (max_valueA - min_valueA) * 100)
+
+       print(A_Score_list$Arousal_Score)
+
+      ggplot(A_Score_list, aes(x = seq_along(Arousal_Score), y = Arousal_Score)) +
+           geom_point(size = 3, color = "black") +
+           labs(
+                x = "Piece", 
+                y = "Arousal Score", 
+                title = "Arousal Score Per Piece"
+               ) +
+                theme_minimal()
+      ggsave("Arousal Score.png", width = 8, height = 6, dpi = 800)
+      ```
+   ![Plot](Fig/pic/pieces/Syncopation%20Score.png)
+
 
 
 
