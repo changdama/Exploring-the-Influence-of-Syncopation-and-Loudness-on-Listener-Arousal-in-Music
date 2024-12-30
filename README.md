@@ -1,6 +1,6 @@
 # Exploring-the-Influence-of-Syncopation-and-Loudness-on-Listener-Arousal-in-Music
 ![Introduction](https://raw.githubusercontent.com/changdama/Exploring-the-Influence-of-Syncopation-and-Loudness-on-Listener-Arousal-in-Music/main/Fig/introduction.png)
-**Examine the individual and combined effects of synco-pation and loudness on listener-reported arousal**
+**Examine the individual and combined effects of syncopation and loudness on listener-reported arousal**
 
 ## Introduction ##
 Music is a powerful tool for evoking emotions, capable of influencing mood, phys-iological states, and even behavior. Arousal, one of the primary dimensions of emo-tional response, reflects the intensity or energy level of an experience and is shaped by various musical features. Understanding the mechanisms behind arousal in music not only deepens our comprehension of human emotional processing but also has practical applications in fields such as music therapy, entertainment, and artificial intelligence-driven music composition. In this research, using syncopation and loudness to analyze arousal.
