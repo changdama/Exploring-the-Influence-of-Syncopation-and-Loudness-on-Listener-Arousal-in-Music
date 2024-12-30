@@ -269,15 +269,26 @@ library(humdrumR)
   combining the syncopation score,the variable factors that affect the arousal score are more convincing.
 
 ## Comparative Analysis ##
-To explore the relationships between syncopation, RMS values, and arousal levels, we conducted a comparative analysis focusing on selected pieces from the corpus. Specifically, we examined two pieces with extreme syncopation scores: one with the highest syncopation score of 100 (Commodores – *Nightshift*) and another with the lowest score of 0 (Jimmy Reed - *Baby What You Want Me To Do*). For additional context, we also analyzed other pieces with notable syncopation and RMS scores. 
 
 ![Plot](Fig/selected_analysis.png)
-![Alt 1](image1.png) ![Alt 2](image2.png)
-  
-
-  
+To explore the relationships between syncopation, RMS values, and arousal levels, we conducted a comparative analysis focusing on selected pieces from the corpus. Specifically, we examined two pieces with extreme syncopation scores: one with the highest syncopation score of 100 (Commodores – *Nightshift*) and another with the lowest score of 0 (Jimmy Reed - *Baby What You Want Me To Do*). For additional context, we also analyzed other pieces with notable syncopation and RMS scores. 
 
 
+
+
+### Syncopation Analysis ###
+![Alt 1](Fig/song_with_the_highest_Syncopation_Score_100_Commodores_Nightshift.png) ![Alt 2](Fig/song_with_the_lowest_Syncopation_Score_0_Jimmy_Reed_Baby_What_You_Want_Me_To_Do.png)
+
+The height of the box plot for each measure represents the proportion of the syncopation count to the total number of notes in the entire measure. When the box plot appears, the higher the height, the smaller the proportion of the syn-copation count in the measure. Conversely, the lower the height, the higher the propor-tion of the syncopation counts in the measure. When the piece does not contain syncopation, no box plot will be displayed, and only the number of non-syncopation notes will be displayed. In *Nightshift*, syncopation exhibits significant variability, with a range spanning 30 to 100 events per measure. This variability is reflected in the dynamic changes in rhythm, as evidenced by the fluctuating box sizes in the visualization. The larger the number of syncopations of the piece, the greater the variability of different box heights, indicating frequent shifts in rhythmic structure. Conversely, Exploring the Influence of Syncopation and Loudness on Listener Arousal in Music syncopation function in HumdrumR has not detected any syncopated events in the vocal part of *Baby What You Want Me To Do*, as shown by the absence of boxes in its visualization.
+
+
+### RMS Analysis ###
+![Alt 1](Fig/A_plot_showing_RMS_values_per_note_of_Commodores_Nightshift_with_Syncopation_Score_100.png) ![Alt 2](Fig/A_plot_showing_RMS_values_per_note_of_Jimmy_Reed_Baby_What_You_Want_Me_To_Do_with_Syncopation_Score_0.png)
+
+The RMS values per note reveal that in *Nightshift*, RMS fluctuates between 60 and 80 with considerable instability, while in *Baby What You Want Me To Do*, RMS values remain relatively stable, fluctuating between 50 and 60.Although higher syncopation often coincides with concentrated RMS values, thereis no direct dependence between the magnitude of RMS and the number of syncopations, as RMS consistently remains within the 50–75 range across all analyzed pieces.
+
+### Arousal Analysis ###
+![Alt 1](Fig/A_plot_showing_RMS_values_per_note_of_Commodores_Nightshift_with_Syncopation_Score_100.png) ![Alt 2](Fig/A_plot_showing_RMS_values_per_note_of_Jimmy_Reed_Baby_What_You_Want_Me_To_Do_with_Syncopation_Score_0.png)
 
 
 
