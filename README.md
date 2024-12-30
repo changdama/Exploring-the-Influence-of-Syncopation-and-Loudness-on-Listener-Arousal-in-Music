@@ -266,7 +266,12 @@ library(humdrumR)
   While examining the relationships between our variables, we created a new com-bined variable integrating the Syncopation and RMS scores to assess its correlation with the Arousal Score. 
   Based on the syncopation coefficient of -0.1487 and the RMS coefficient of -0.7242, the overall coefficient is still greater than 0, and the relationship between the independent variable 
   and the dependent variable is still positively corre-lated. Compared to the effect of the RMS score on the arousal score alone, the R-squared increases to 0.1266, which means that after 
-  combining the syncopation score,the variable factors that affect the arousal score are more convincing
+  combining the syncopation score,the variable factors that affect the arousal score are more convincing.
+
+## Comparative Analysis ##
+To explore the relationships between syncopation, RMS values, and arousal levels, we conducted a comparative analysis focusing on selected pieces from the corpus. Specifically, we examined two pieces with extreme syncopation scores: one with the highest syncopation score of 100 (Commodores – Nightshift) and another with the lowest score of 0 (Jimmy Reed - Baby What You Want Me To Do). For additional context, we also analyzed other pieces with notable syncopation and RMS scores. 
+
+
 
   
 
