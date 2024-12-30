@@ -269,10 +269,10 @@ library(humdrumR)
   combining the syncopation score,the variable factors that affect the arousal score are more convincing.
 
 ## Comparative Analysis ##
-To explore the relationships between syncopation, RMS values, and arousal levels, we conducted a comparative analysis focusing on selected pieces from the corpus. Specifically, we examined two pieces with extreme syncopation scores: one with the highest syncopation score of 100 (Commodores – Nightshift) and another with the lowest score of 0 (Jimmy Reed - Baby What You Want Me To Do). For additional context, we also analyzed other pieces with notable syncopation and RMS scores. 
+To explore the relationships between syncopation, RMS values, and arousal levels, we conducted a comparative analysis focusing on selected pieces from the corpus. Specifically, we examined two pieces with extreme syncopation scores: one with the highest syncopation score of 100 (Commodores – *Nightshift*) and another with the lowest score of 0 (Jimmy Reed - *Baby What You Want Me To Do*). For additional context, we also analyzed other pieces with notable syncopation and RMS scores. 
 
-
-
+![Plot](Fig/selected_analysis.png)
+![Alt 1](image1.png) ![Alt 2](image2.png)
   
 
   
