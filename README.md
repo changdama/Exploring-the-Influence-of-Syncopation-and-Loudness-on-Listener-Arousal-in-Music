@@ -296,5 +296,19 @@ In *Nightshift*, the high number of syncopations correlates with significant flu
 
 ![Plot](Fig/Other_pieces_analysis.svg)
 
+As for other pieces we select, explaining the relationship between the arousal value and syncopation count, certain pieces (Piece 52 and Piece 56) show a positive relation-ship between syncopation and arousal fluctuations, others (Piece 100 and Piece 83) do not. This inconsistency may explain the weak overall correlation observed between syncopation and arousal scores across the corpus. For explaining the relationship be-tween RMS value and arousal value, no definitive relationship emerged between RMS values and arousal at the individual note level. This suggests the need to consider addi-tional factors, such as harmonic complexity or lyrical content, to holistically understand arousal.
+
+## Limitation and Implication ##
+
+This analysis focused exclusively on vocal parts, excluding instrumental syncopa-tion, which may have contributed additional rhythmic complexity. Furthermore, the dataset was limited to 100 pieces, potentially restricting the generalizability of the find-ings to broader musical contexts.
+
+The results highlight the importance of considering multiple interacting variables in understanding musical arousal. While RMS appears to dominate as a predictor, synco-pation may serve as an auxiliary feature that interacts with other musical elements to produce nuanced emotional effects. Future research could explore these interactions using larger and more diverse datasets, as well as experimental designs that manipulate syncopation and loudness simultaneously.From an application perspective, understand-ing the combined effects of RMS and syncopation could inform the design of more emotionally engaging music in therapeutic, entertainment, or AI-driven music compo-sition contexts. For instance, adaptive music systems could dynamically adjust both loudness and rhythmic complexity to evoke desired emotional responses in listeners.
+
+## Team ##
+
+| Name                  | Seniority | Major                  | Department | Contribution                                                  | 
+| --------------------- | --------- | ---------------------- | ---------- | ------------------------------------------------------------- | 
+| Changda Ma            | Masters   | Architecture           | ARCH       | musical symbolical analysis and visualization                 | 
+| Alexey Voronin        | Masters   | Music technology       | MUSI       | music theory concept                                          | 
 
 
