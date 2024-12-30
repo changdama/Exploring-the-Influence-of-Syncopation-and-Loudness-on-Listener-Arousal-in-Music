@@ -288,11 +288,13 @@ The height of the box plot for each measure represents the proportion of the syn
 The RMS values per note reveal that in *Nightshift*, RMS fluctuates between 60 and 80 with considerable instability, while in *Baby What You Want Me To Do*, RMS values remain relatively stable, fluctuating between 50 and 60.Although higher syncopation often coincides with concentrated RMS values, thereis no direct dependence between the magnitude of RMS and the number of syncopations, as RMS consistently remains within the 50–75 range across all analyzed pieces.
 
 ### Arousal Analysis ###
-![Alt 1](Fig/A_plot_showing_RMS_values_per_note_of_Commodores_Nightshift_with_Syncopation_Score_100.png) ![Alt 2](Fig/A_plot_showing_RMS_values_per_note_of_Jimmy_Reed_Baby_What_You_Want_Me_To_Do_with_Syncopation_Score_0.png)
+![Alt 1](Fig/A_plot_showing_Arousal_values_per_note_of_Commodores_Nightshift_with_Syncopation_Score_100.png) ![Alt 2](Fig/A_plot_showing_Arousal_values_per_note_of_Jimmy_Reed_Baby_What_You_Want_Me_To_Do_with_Syncopation_Score_0.png)
 
+In *Nightshift*, the high number of syncopations correlates with significant fluctuations in participant-reported arousal levels, indicating a varied emotional response. In contrast, *Baby What You Want Me To Do* exhibits stable arousal values with minimal fluctuation, consistent with its lack of syncopation.
 
+### Other Pieces Analysis ###
 
-
+![Plot](Fig/Other_pieces_analysis.svg)
 
 
 
